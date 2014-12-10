@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Jogging": {
+            "applicationId": "miw8ufMpwGjfvnuLssMXMNs0xNqThjWDRKJC2ELl", 
+            "masterKey": "swg8uhA6jvBjSUZ06FbZYmQN9FhWuigenNHMXAAy"
+        }, 
+        "_default": {
+            "link": "Jogging"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.2"
+    }
+}
