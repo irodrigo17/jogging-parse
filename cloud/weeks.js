@@ -1,9 +1,7 @@
 exports.week = function(weeks, date){
-  var dateOnly = new Date(date);
-  dateOnly.setHours(0, 0, 0, 0);
   for(var i = 0; i < weeks.length; ++i){
     var week = weeks[i];
-    if(dateOnly >= week.startDate && dateOnly <= week.endDate){
+    if(date >= week.startDate && date <= week.endDate){
       return week;
     }
   }
@@ -24,16 +22,16 @@ exports.createWeek = function(date){
 
 exports.weekDates = function(date){
   var now = new Date(date);
-  // reset time
-  now.setHours(0,0,0,0);
 
   // get the previous monday
   var monday = new Date(now);
   monday.setDate(monday.getDate() - monday.getDay() + 1);
+  monday.setHours(0,0,0,0);
 
   // get next sunday
   var sunday = new Date(now);
   sunday.setDate(sunday.getDate() - sunday.getDay() + 7);
+  sunday.setHours(23, 59, 59, 999);
 
   return [monday, sunday];
 }

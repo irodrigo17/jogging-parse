@@ -3,6 +3,7 @@
 Parse.Cloud.define("report", function(request, response) {
   var query = new Parse.Query("Jog");
   query.equalTo("user", request.params.user);
+  query.ascending("date");
   query.find({
     success: function(results) {
       var weeks = require("cloud/weeks.js");
